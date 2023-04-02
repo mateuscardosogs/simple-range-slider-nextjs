@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import './components/multirangeslider.css';
+import './components/simplerangeslider.css';
 import './components/multirangesliderblack.css';
-import MultiRangeSlider, { ChangeResult } from './components/multirangeslider';
+import SimpleRangeSlider, { ChangeResult } from './components/simplerangeslider';
 
 function App() {
 	const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -93,10 +93,10 @@ function App() {
 				<h1>simple-range-slider-nextjs demo</h1>
 			</div>
 			<hr />
-			<div className='multi-range-slider-container'>
+			<div className='simple-range-slider-container'>
 				<b>Simple range slider with default values</b>
 				<hr />
-				<MultiRangeSlider
+				<SimpleRangeSlider
 					ref={ref}
 					minValue={minValue}
 					maxValue={maxValue}
@@ -104,7 +104,7 @@ function App() {
 						setMinValue(e.minValue);
 						setMaxValue(e.maxValue);
 					}}
-				></MultiRangeSlider>
+				></SimpleRangeSlider>
 				<div style={{ display: 'flex', justifyContent: 'center' }}>
 					<div style={{ margin: '10px' }}>onInput:</div>
 					<div style={{ margin: '10px' }}>{minValue}</div>
@@ -112,13 +112,13 @@ function App() {
 				</div>
 			</div>
 			<hr />
-			<div className='multi-range-slider-container'>
+			<div className='simple-range-slider-container'>
 				<b>Range slider with custom css</b>
 				<hr />
-				<div>baseClassName='multi-range-slider-black'</div>
+				<div>baseClassName='simple-range-slider-black'</div>
 				<div>minValue and maxValue dependent on state </div>
-				<MultiRangeSlider
-					baseClassName='multi-range-slider-black'
+				<SimpleRangeSlider
+					baseClassName='simple-range-slider-black'
 					minValue={minValue}
 					maxValue={maxValue}
 					onInput={(e: ChangeResult) => {
@@ -137,14 +137,14 @@ function App() {
 				</div>
 			</div>
 			<hr />
-			<div className='multi-range-slider-container'>
+			<div className='simple-range-slider-container'>
 				<b>Range slider for week days range</b>
 				<hr />
 				<div>labels = [{weekDays.join(', ')}] </div>
 				<div>min = '0'</div>
 				<div>max = '6'</div>
 				<div>step = '1'</div>
-				<MultiRangeSlider
+				<SimpleRangeSlider
 					labels={weekDays}
 					min='0'
 					max='6'
@@ -171,7 +171,7 @@ function App() {
 				</div>
 			</div>
 			<hr />
-			<div className='multi-range-slider-container'>
+			<div className='simple-range-slider-container'>
 				<b>Range slider for date-range</b>
 				<hr />
 				<div>labels = [{monthNames.join(', ')}] </div>
@@ -180,7 +180,7 @@ function App() {
 				<div>step=1</div>
 				<div>minCaption=string</div>
 				<div>maxCaption=string</div>
-				<MultiRangeSlider
+				<SimpleRangeSlider
 					labels={monthNames}
 					min={0}
 					max={yearDays - 1}
@@ -202,7 +202,7 @@ function App() {
 				</div>
 			</div>
 			<hr />
-			<div className='multi-range-slider-container'>
+			<div className='simple-range-slider-container'>
 				<b>Time-Range</b>
 				<hr />
 				<div>
@@ -213,7 +213,7 @@ function App() {
 				<div>max = {timeMax}</div>
 				<div>step = 1</div>
 				<div>subSteps = true</div>
-				<MultiRangeSlider
+				<SimpleRangeSlider
 					labels={getTimeLabels()}
 					min={0}
 					max={timeMax}
@@ -232,7 +232,7 @@ function App() {
 				</div>
 			</div>
 			<hr />
-			<div className='multi-range-slider-container'>
+			<div className='simple-range-slider-container'>
 				<b>negative and positive range </b>
 				<hr />
 				<div>min={-1}</div>
@@ -240,7 +240,7 @@ function App() {
 				<div>minValue={-0.5}</div>
 				<div>maxValue={0.5}</div>
 				<div>step={0.1}</div>
-				<MultiRangeSlider
+				<SimpleRangeSlider
 					min={-1}
 					max={1}
 					minValue={-0.5}
@@ -258,14 +258,14 @@ function App() {
 				</div>
 			</div>
 			<hr />
-			<div className='multi-range-slider-container'>
+			<div className='simple-range-slider-container'>
 				<b>Range slider for range in round of steps</b>
 				<hr />
 				<div>min = 0</div>
 				<div>max = 100</div>
 				<div>step = 5</div>
 				<div> stepOnly = true </div>
-				<MultiRangeSlider
+				<SimpleRangeSlider
 					min={0}
 					max={100}
 					minValue={30}
@@ -284,7 +284,7 @@ function App() {
 				</div>
 			</div>
 			<hr />
-			<div className='multi-range-slider-container' style={{ border: 'solid 1px' }}>
+			<div className='simple-range-slider-container' style={{ border: 'solid 1px' }}>
 				<h3> custom style </h3>
 				<hr />
 				<div>style=" border: 'none', boxShadow: 'none', padding: '15px 10px' "</div>
@@ -295,7 +295,7 @@ function App() {
 				<div>barRightColor='green'</div>
 				<div>thumbLeftColor='lime'</div>
 				<div>thumbRightColor='lime'</div>
-				<MultiRangeSlider
+				<SimpleRangeSlider
 					min={0}
 					max={100}
 					onInput={(e: ChangeResult) => {

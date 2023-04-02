@@ -32,7 +32,7 @@ export type ChangeResult = {
 	maxValue: number;
 };
 
-const MultiRangeSlider = (props: Props, ref: React.ForwardedRef<HTMLDivElement>): JSX.Element => {
+const SimpleRangeSlider = (props: Props, ref: React.ForwardedRef<HTMLDivElement>): JSX.Element => {
 	let ruler = props.ruler === undefined || props.ruler === null ? true : props.ruler;
 	let label = props.label === undefined || props.label === null ? true : props.label;
 	let subSteps = props.subSteps === undefined || props.subSteps === null ? false : props.subSteps;
@@ -373,7 +373,7 @@ const MultiRangeSlider = (props: Props, ref: React.ForwardedRef<HTMLDivElement>)
 	}, [props.maxValue, min, max, step]);
 
 	return (
-		<div ref={ref} className={(props.baseClassName || 'multi-range-slider') + ' ' + (props.className || '')} style={props.style} onWheel={onMouseWheel}>
+		<div ref={ref} className={(props.baseClassName || 'simple-range-slider') + ' ' + (props.className || '')} style={props.style} onWheel={onMouseWheel}>
 			<div className='bar' ref={refBar}>
 				<div className='bar-left' style={{ width: barMin + '%', backgroundColor: props.barLeftColor }} onClick={onBarLeftClick}></div>
 				<input className='input-type-range input-type-range-min' type='range' min={min} max={max} step={step} value={minValue} onInput={onInputMinChange} />
@@ -418,4 +418,4 @@ const MultiRangeSlider = (props: Props, ref: React.ForwardedRef<HTMLDivElement>)
 	);
 };
 
-export default React.memo(forwardRef<HTMLDivElement, Props>(MultiRangeSlider));
+export default React.memo(forwardRef<HTMLDivElement, Props>(SimpleRangeSlider));

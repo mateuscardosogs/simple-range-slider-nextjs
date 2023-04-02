@@ -17,13 +17,13 @@ a react component compatible with Next.js that can easy to use and interact with
 
 # No Dependency only single component file and css file 
 
-## MultiRangeSlider.jsx , MultiRangeSlider.css
+## SimpleRangeSlider.jsx , SimpleRangeSlider.css
 
 ### You can customize css to change UI/UX.
 
 Download CSS file and modify it and reference it with baseClassName attribute
 
-[multirangeslider.css](https://raw.githubusercontent.com/mateuscardosogs/simple-range-slider-nextjs/main/src/components/multirangeslider.css)
+[simplerangeslider.css](https://raw.githubusercontent.com/mateuscardosogs/simple-range-slider-nextjs/main/src/components/simplerangeslider.css)
 
 [multirangesliderblack.css](https://raw.githubusercontent.com/mateuscardosogs/simple-range-slider-nextjs/main/src/components/multirangesliderblack.css)
 
@@ -46,15 +46,15 @@ Following is the list of props that control the component
 |minCaption|String||caption on min thumb when sliding - can set on onChange/onInput event|
 |maxCaption|String||caption on max thumb when sliding - can set on onChange/onInput event|
 |subSteps|Boolean|false|is small steps line visible or not|
-|baseClassName|String|multi-range-slider|Change CSS style of your own|
-|className|String|''|Add additional class with baseClassName to div.multi-range-slider|
-|style|React.CSSProperties||specify/override additional style on div.multi-range-slider|
+|baseClassName|String|simple-range-slider|Change CSS style of your own|
+|className|String|''|Add additional class with baseClassName to div.simple-range-slider|
+|style|React.CSSProperties||specify/override additional style on div.simple-range-slider|
 |barLeftColor|String-Color||specify slider left part background color|
 |barRightColor|String-Color||specify slider right part background color|
 |barInnerColor|String-Color||specify slider inner part background color|
 |thumbLeftColor|String-Color||specify slider left thumb background color|
 |thumbRightColor|String-Color||specify slider right thumb background color|
-|ref|React.useRef||reference to div.multi-range-slider|
+|ref|React.useRef||reference to div.simple-range-slider|
 
 ### Event List
 
@@ -117,7 +117,7 @@ Example Code
 #### App.jsx
 
 	import React, { useState } from "react";
-	import MultiRangeSlider from "simple-range-slider-nextjs";
+	import SimpleRangeSlider from "simple-range-slider-nextjs";
 	function App() {
 	const [minValue, set_minValue] = useState(25);
 	const [maxValue, set_maxValue] = useState(75);
@@ -128,7 +128,7 @@ Example Code
 
 	return (
 		<div className="App">
-			<MultiRangeSlider
+			<SimpleRangeSlider
 				min={0}
 				max={100}
 				step={5}
@@ -150,7 +150,7 @@ Example Code
 #### App.tsx
 
 	import React, { useState } from "react";
-	import MultiRangeSlider, { ChangeResult } from "simple-range-slider-nextjs";
+	import SimpleRangeSlider, { ChangeResult } from "simple-range-slider-nextjs";
 
 	const App = () => {
 		const [minValue, setMinValue] = useState(25);
@@ -158,10 +158,10 @@ Example Code
 
 		return (
 			<div className='App'>
-				<div className='multi-range-slider-container'>
+				<div className='simple-range-slider-container'>
 					<b>Simple range slider with default values</b>
 					<hr />
-					<MultiRangeSlider
+					<SimpleRangeSlider
 						min={0}
 						max={100}
 						step={5}
@@ -171,7 +171,7 @@ Example Code
 							setMinValue(e.minValue);
 							setMaxValue(e.maxValue);
 						}}
-					></MultiRangeSlider>
+					></SimpleRangeSlider>
 					<div style={{ display: 'flex', justifyContent: 'center' }}>
 						<div style={{ margin: '10px' }}>onInput:</div>
 						<div style={{ margin: '10px' }}>{minValue}</div>
