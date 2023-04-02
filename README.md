@@ -25,7 +25,7 @@ Download CSS file and modify it and reference it with baseClassName attribute
 
 [simplerangeslider.css](https://raw.githubusercontent.com/mateuscardosogs/simple-range-slider-nextjs/main/src/components/simplerangeslider.css)
 
-[multirangesliderblack.css](https://raw.githubusercontent.com/mateuscardosogs/simple-range-slider-nextjs/main/src/components/multirangesliderblack.css)
+[simplerangesliderblack.css](https://raw.githubusercontent.com/mateuscardosogs/simple-range-slider-nextjs/main/src/components/simplerangesliderblack.css)
 
 <hr/>
 

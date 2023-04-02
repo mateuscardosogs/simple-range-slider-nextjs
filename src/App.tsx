@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './components/simplerangeslider.css';
-import './components/multirangesliderblack.css';
+import './components/simplerangesliderblack.css';
 import SimpleRangeSlider, { ChangeResult } from './components/simplerangeslider';
 
 function App() {
